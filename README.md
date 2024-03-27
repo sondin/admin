@@ -262,12 +262,3 @@ private String myColumn;
 
 
 
-### 交流反馈
-* github仓库：https://github.com/kalvinGit/kvf-admin
-* gitee仓库：https://gitee.com/kalvinmy/kvf-admin
-* 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
-* 交流群：214768328
-<p>
-    <img width="150" src="http://cloud.kalvinbg.cn/image/kvf_code.png" alt="技术交流群">
-</p>
-
