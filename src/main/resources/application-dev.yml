@@ -15,7 +15,7 @@ spring:
       strict: false #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候会抛出异常,不启动则使用默认数据源.
       datasource:
         master: # 主数据源
-          url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/kvf_admin?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+          url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3307}/admin?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
           username: ${MYSQL_USERNAME:root}
           password: ${MYSQL_PASSWORD:root}
           driver-class-name: com.mysql.cj.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
@@ -82,7 +82,7 @@ spring:
     # Redis服务器地址
     host: ${REDIS_HOST:127.0.0.1}
     port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:}
+    password: ${REDIS_PASSWORD:12345}
     jedis:
       pool:
         # 连接池最大连接数（使用负值表示没有限制）
@@ -112,6 +112,12 @@ mybatis-plus:
       id-type: auto
       table-underline: true
 
+chrome:
+  capabilities:
+    url: https://www.gsmarena.com
+    browserName: chrome
+    browserVersion: 115.0
+  #selenium_url=http://localhost:4444/wd/hub
 
 # kvf自定义配置
 kvf:

@@ -1,0 +1,15 @@
+case:
+  name : 登陆
+  url: localhost
+  inputs:
+    - type: id
+      name: kUserLoginUsername
+      value: admin
+    - type: id
+      name: kUserLoginUsername
+      value: admin
+  button:
+    - type: id
+      name: submitBtn
+
+  pipeline:

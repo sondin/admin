@@ -17,9 +17,9 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
-DROP DATABASE IF EXISTS kvf_admin;
-CREATE DATABASE kvf_admin DEFAULT CHARSET utf8mb4;
-USE kvf_admin;
+-- DROP DATABASE IF EXISTS kvf_admin;
+-- CREATE DATABASE kvf_admin DEFAULT CHARSET utf8mb4;
+-- USE kvf_admin;
 
 -- ----------------------------
 -- Table structure for sys_user

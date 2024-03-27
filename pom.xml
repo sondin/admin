@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kalvin</groupId>
@@ -27,6 +27,9 @@
         <hutool.version>4.5.1</hutool.version>
         <mysql.version>8.0.28</mysql.version>
         <docker.image.prefix>kvf</docker.image.prefix>
+        <carina-core_version>1.0.2</carina-core_version>
+        <carina-dataprovider.version>1.0.2</carina-dataprovider.version>
+        <carina-api.version>1.0.2</carina-api.version>
     </properties>
 
     <!--多环境参数配置-->
@@ -121,6 +124,24 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.zebrunner</groupId>
+            <artifactId>carina-core</artifactId>
+            <version>${carina-core_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zebrunner</groupId>
+            <artifactId>carina-webdriver</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zebrunner</groupId>
+            <artifactId>carina-api</artifactId>
+            <version>${carina-api.version}</version>
+        </dependency>
+
 
         <!-- mybatis-plus相关依赖 -->
         <dependency>

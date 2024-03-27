@@ -25,13 +25,15 @@ public class LoginFilter extends AccessControlFilter {
 
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
-        if (ShiroFilterKit.isAjax(request)) {
-            LOGGER.info("当前用户没有登录，并且是Ajax请求");
-            ShiroFilterKit.out(response);
-            return false;
-        }
-        // 保存Request和Response 到登录后的链接
-        saveRequestAndRedirectToLogin(request, response);
-        return false;
+
+        return true;
+//        if (ShiroFilterKit.isAjax(request)) {
+//            LOGGER.info("当前用户没有登录，并且是Ajax请求");
+//            ShiroFilterKit.out(response);
+//            return false;
+//        }
+//        // 保存Request和Response 到登录后的链接
+//        saveRequestAndRedirectToLogin(request, response);
+//        return false;
     }
 }

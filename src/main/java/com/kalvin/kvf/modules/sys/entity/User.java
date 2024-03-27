@@ -1,6 +1,7 @@
 package com.kalvin.kvf.modules.sys.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.kalvin.kvf.common.entity.BaseEntity;

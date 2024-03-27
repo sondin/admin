@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kalvin.kvf.modules.test.mapper.TcaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kalvin.kvf.modules.test.entity.Tcase">
+        <id column="id" property="id" />
+        <result column="testcase_name" property="testcaseName" />
+        <result column="comment" property="comment" />
+        <result column="contenttype" property="contenttype" />
+        <result column="create_time" property="createTime" />
+        <result column="parameter" property="parameter" />
+        <result column="path" property="path" />
+        <result column="projectId" property="projectId" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+       id, testcase_name, comment, contenttype, create_time, parameter, path, projectId, type
+    </sql>
+
+    <select id="selectTcaseList" resultType="com.kalvin.kvf.modules.test.entity.Tcase">
+        select <include refid="Base_Column_List" /> from test_tcase
+        <trim prefix="where" prefixOverrides="and">
+            <if test="tcase.testcaseName != null and tcase.testcaseName != ''">
+                and testcase_name like concat(#{tcase.testcaseName}, "%")
+            </if>
+            <if test="tcase.comment != null and tcase.comment != ''">
+                and comment like concat(#{tcase.comment}, "%")
+            </if>
+            <if test="tcase.contenttype != null and tcase.contenttype != ''">
+                and contenttype like concat(#{tcase.contenttype}, "%")
+            </if>
+            <if test="tcase.createTime != null">
+                and create_time = #{tcase.createTime}
+            </if>
+            <if test="tcase.parameter != null and tcase.parameter != ''">
+                and parameter like concat(#{tcase.parameter}, "%")
+            </if>
+            <if test="tcase.path != null and tcase.path != ''">
+                and path like concat(#{tcase.path}, "%")
+            </if>
+            <if test="tcase.projectId != null and tcase.projectId != ''">
+                and projectId like concat(#{tcase.projectId}, "%")
+            </if>
+            <if test="tcase.type != null and tcase.type != ''">
+                and type like concat(#{tcase.type}, "%")
+            </if>
+        </trim>
+    </select>
+
+</mapper>
