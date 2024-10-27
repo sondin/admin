@@ -1,0 +1,28 @@
+# 环境变量 (命名必须以 VITE_ 开头)
+# 接口前缀
+VITE_API_PREFIX = '/api'
+
+# 接口地址
+VITE_API_BASE_URL = 'http://172.0.0.1:8000'
+
+# 接口地址 (WebSocket)
+VITE_API_WS_URL = 'ws://172.0.0.1:8000'
+
+# 地址前缀
+VITE_BASE = '/'
+
+# 是否开启开发者工具
+VITE_OPEN_DEVTOOLS = false
+
+
+  attu:
+    container_name: attu
+    image:  swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/zilliz/attu:v2.4
+    environment:
+      MILVUS_URL: standalone:19530
+    ports:
+      - "8001:3000"
+    depends_on:
+      - "standalone"
+    networks:
+        app:
